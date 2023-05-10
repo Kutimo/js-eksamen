@@ -1,0 +1,12 @@
+:root {
+  --shadow-lg: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+  --shadow-xl: drop-shadow(0 20px 13px rgb(0 0 0 / 0.05)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+.test {
+  filter: var(--shadow-xl);
+  background-color: #7a7978;
+  width: 10rem;
+  padding: 1rem;
+  margin: 1rem;
+}
