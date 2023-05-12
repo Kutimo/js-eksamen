@@ -15,32 +15,25 @@ body {
 body {
   background: linear-gradient(293.15deg, #050ec3 -78.01%, #293e8d -7.64%, #6fa7c4 39.86%, #d5d2d2 80.32%);
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 main {
   height: 100vh;
   width: 100%;
-  background: url("../assets/svg/blob.svg");
-  background-repeat: no-repeat;
-  background-position-y: -100%;
-  background-position-x: right;
-  background-size: 800px 800px;
-  background-attachment: local;
 }
 
-/* .main__bg-image {
-  background: url("../assets/svg/blob.svg");
-  background-repeat: no-repeat;
-  background-size: 50% 70%;
+.main__bg-image {
   position: absolute;
-  background-position: calc(100% - 50px) calc(100% - 50px);
-  background-position: 0;
-  background-position-y: bottom; 
-  height: 100%;
-  width: 100%;
-  background-attachment: fixed;
-} */
+  right: 0;
+  bottom: 0;
+  height: 70vh;
+  width: 60%;
+  object-fit: cover;
+  display: block;
+  object-position: top left;
+  overflow: hidden;
+}
 .test {
   filter: var(--shadow-xl);
   background-color: #7a7978;
