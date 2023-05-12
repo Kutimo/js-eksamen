@@ -22,6 +22,10 @@ main {
   height: 100vh;
   width: 100%;
 }
+.main__bg-wrapper {
+  height: 100vh;
+  width: 100%;
+}
 
 .main__bg-image {
   position: absolute;
@@ -33,6 +37,18 @@ main {
   display: block;
   object-position: top left;
   overflow: hidden;
+}
+.main__bg-image-map {
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  height: 30%;
+}
+.main__bg-image-map:hover {
+  filter: invert(1);
+  border: 2px solid var(--light-shade);
+  border-radius: 100%;
+  cursor: pointer;
 }
 .test {
   filter: var(--shadow-xl);
