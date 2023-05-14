@@ -6,26 +6,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- TODO:  name, url, author etc. -->
+  <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/layout.css">
   <!-- TODO: Favicon -->
   <title>Dog Sitters</title>
 </head>
 <!-- TODO: Dialog element -->
 
 <body>
-  <header>
-    <!-- TODO: LOGO -->
-    <nav></nav>
+  <header class="navbar">
+    <a href="/" class="navbar__logo">
+      <img src="./assets/svg/logo.svg" alt="logo" height="64" width="64">
+      <h1>
+        Dog sitters
+      </h1>
+    </a>
+    <div class="menu">
+      <img class="menu__icon" src="./assets/svg/ham_menu.svg" alt="menu icon" height="20" width="20">
+      <img class="menu__icon" src="./assets/svg/user_icon.svg" alt="user icon" height="30" width="30">
+
+      <nav class="menu__nav hidden">
+        <ul>
+          <a href="">
+            <li>Log in</li>
+          </a>
+          <a href="">
+            <li>Registrer</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
   </header>
   <main>
     <h1>
       Dog walker
     </h1>
-    <div class="main__bg-wrapper">
+    <div class="bg-wrapper">
+      <img class="bg-wrapper__illustration" src="./assets/svg/hero_illustration.svg" alt="dog walker illustration">
       <!-- TODO: ALT text  -->
-      <img src="./assets/svg/blob.svg" class="main__bg-image" />
-      <a href="#walker">
-        <img src="./assets/svg/map.svg" class="main__bg-image-map" alt="map illustration">
+      <img src="./assets/svg/blob.svg" class="bg-wrapper__image" alt="" />
+      <a href="" class="link">
+        <img src="./assets/svg/map.svg" class="link__map" alt="map illustration" height="200" width="200">
+        <h3 class="link__title">Find experienced dog walkers near you</h3>
       </a>
     </div>
   </main>
@@ -33,7 +56,8 @@
   <div>
     <p class="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, sequi?</p>
   </div>
-  <script type="module" src="./Js/script.js"></script>
+  <script type="module" src="./js/script.js"></script>
+  <script type="module" src="./js/layout.js"></script>
 </body>
 
 </html>

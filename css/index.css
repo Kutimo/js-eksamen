@@ -1,5 +1,3 @@
-@import url(./global.css);
-
 html,
 body {
   height: 100%;
@@ -22,12 +20,19 @@ main {
   height: 100vh;
   width: 100%;
 }
-.main__bg-wrapper {
+
+.bg-wrapper {
   height: 100vh;
   width: 100%;
 }
 
-.main__bg-image {
+.bg-wrapper__illustration {
+  position: absolute;
+  bottom: 0;
+  margin: 2rem;
+}
+
+.bg-wrapper__image {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -38,18 +43,43 @@ main {
   object-position: top left;
   overflow: hidden;
 }
-.main__bg-image-map {
+
+.link {
   position: absolute;
-  right: 5%;
-  bottom: 20%;
-  height: 30%;
+  right: 0;
+  bottom: 0;
+  margin: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.main__bg-image-map:hover {
+
+.link {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.link:hover {
+  color: var(--light-accent);
+}
+
+.link__map {
+  border: 2px solid var(--white);
+  border-radius: 100%;
+}
+
+.link__map:hover {
   filter: invert(1);
   border: 2px solid var(--light-shade);
   border-radius: 100%;
   cursor: pointer;
 }
+.link__title {
+  margin: 2rem;
+  font-size: 24px;
+  text-align: center;
+}
+
 .test {
   filter: var(--shadow-xl);
   background-color: #7a7978;
