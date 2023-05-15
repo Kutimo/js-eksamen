@@ -32,7 +32,7 @@
   border-radius: 9999px;
   background: var(--white);
 }
-.menu:hover:not(:hover > .menu__icon) {
+.menu:hover {
   filter: var(--shadow-lg);
 }
 
@@ -42,7 +42,25 @@
 
 .menu__nav {
   position: absolute;
+  padding: 2rem;
+  background-color: var(--white);
+  z-index: 1;
+  top: 2.8rem;
+  right: 0.5rem;
+}
+
+.nav__list {
+
+}
+
+.nav__link {
+  padding: 2rem;
+  width: 100%;
+  color: var(--dark-shade);
+}
+.nav__link:hover {
   background-color: var(--light-shade);
-  bottom: -3rem;
-  right: 0;
+}
+.nav__list-item {
+  
 }
