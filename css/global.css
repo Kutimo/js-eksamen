@@ -12,15 +12,57 @@
   --shadow-xl: drop-shadow(0 20px 13px rgb(0 0 0 / 0.05)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 }
 
-.hidden {
-  display: none;
+/* Small css reset */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 100%;
 }
 
-li {
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, a, button {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font: inherit;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+ol, ul {
   list-style: none;
 }
-li,
+
 a {
-  font-size: 1.2rem;
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+.hidden {
+  display: none;
 }

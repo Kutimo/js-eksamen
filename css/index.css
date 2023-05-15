@@ -1,35 +1,59 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
 body {
   background: linear-gradient(293.15deg, #050ec3 -78.01%, #293e8d -7.64%, #6fa7c4 39.86%, #d5d2d2 80.32%);
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
 }
 
-main {
+.hero {
   height: 100vh;
   width: 100%;
 }
 
-.bg-wrapper {
-  height: 100vh;
-  width: 100%;
+.hero__container {
+  width: 50%;
+  max-width: 700px;
+  padding: 1rem 5rem;
+  /* display: flex;
+  flex-direction: column; */
 }
 
-.bg-wrapper__illustration {
-  position: absolute;
-  bottom: 0;
-  margin: 2rem;
+.hero__title {
+  display: inline;
+  font-weight: 700;
+  font-size: 66px;
+  color: var(--black);
+  background-color: var(--dark-accent);
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.hero__body {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.hero__button {
+  width: 33%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 0.3rem;
+  border: solid 0.2rem var(--dark-shade);
+  color: var(--white);
+  padding: 10px 30px;
+  background-color: var(--main-color);
+  transition: 0.3s ease-in-out all;
+}
+
+.hero__button:hover {
+  cursor: pointer;
+  border-color: var(--light-accent);
+  filter: var(--shadow-xl);
+}
+
+.hero__bg-wrapper {
+  height: 100vh;
+  width: 100%;
 }
 
 .bg-wrapper__image {
@@ -66,6 +90,8 @@ main {
 .link__map {
   border: 2px solid var(--white);
   border-radius: 100%;
+  margin-left: 5rem;
+  pointer-events: visible;
 }
 
 .link__map:hover {
@@ -78,6 +104,7 @@ main {
   margin: 2rem;
   font-size: 24px;
   text-align: center;
+  font-weight: semibold;
 }
 
 .test {

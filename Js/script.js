@@ -6,6 +6,7 @@ async function getEmployees() {
   fetch("https://randomuser.me/api/?nat=no")
     .then((response) => response.json())
     .then((data) => {
+      // TODO: CONSOLE 
       console.log(data)
       employees = data.results.map((employee) => {
         return {
@@ -23,22 +24,6 @@ async function getEmployees() {
         }
       })
     })
-    .catch(error => console.log(error))
+    .catch(error => console.error(error))
 }
 getEmployees()
-
-
-// fetch(URL)
-//   .then((res) => res.json())
-//   .then((data) => {
-//     characters = data.map((character) => {
-//       return {
-//         name: character.name,
-//         image: character.image,
-//         yearOfBirth: character.yearOfBirth,
-//         alive: character.alive,
-//         house: character.house,
-//       };
-//     });
-//     createCards();
-//   });

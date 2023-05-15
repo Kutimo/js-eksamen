@@ -16,7 +16,7 @@
 
 .navbar__logo:hover {
   filter: grayscale(100);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .menu {
@@ -50,7 +50,6 @@
 }
 
 .nav__list {
-
 }
 
 .nav__link {
@@ -62,5 +61,4 @@
   background-color: var(--light-shade);
 }
 .nav__list-item {
-  
 }
