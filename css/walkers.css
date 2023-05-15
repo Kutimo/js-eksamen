@@ -1,0 +1,37 @@
+body {
+  background: var(--gradient);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--white);
+  padding: 1rem;
+}
+
+.header__search {
+  border: 2px solid var(--dark-accent);
+  width: 15rem;
+  position: relative;
+}
+
+.search__input {
+  height: 100%;
+  width: 100%;
+}
+
+.search__label {
+  position: absolute;
+  bottom: 20%;
+  left: 2%;
+}
+
+.header__search:focus {
+  outline: none;
+  border-bottom: 1px solid var(--dark-shade);
+}
+
+.header__dropdown {
+  padding: 0.5rem;
+  background-color: var(--light-shade);
+}

@@ -1,7 +1,6 @@
 body {
-  background: linear-gradient(293.15deg, #050ec3 -78.01%, #293e8d -7.64%, #6fa7c4 39.86%, #d5d2d2 80.32%);
-  background-repeat: no-repeat;
-  /* background-attachment: fixed; */
+  background: var(--gradient);
+  background-repeat: none;
 }
 
 .hero {
@@ -51,10 +50,10 @@ body {
   filter: var(--shadow-xl);
 }
 
-.hero__bg-wrapper {
+/* .hero__bg-wrapper {
   height: 100vh;
   width: 100%;
-}
+} */
 
 .bg-wrapper__image {
   position: absolute;
@@ -81,10 +80,11 @@ body {
 .link {
   text-decoration: none;
   color: var(--white);
+  transition: 0.3s ease-in-out all;
 }
 
 .link:hover {
-  color: var(--light-accent);
+  color: var(--dark-shade);
 }
 
 .link__map {
@@ -92,6 +92,7 @@ body {
   border-radius: 100%;
   margin-left: 5rem;
   pointer-events: visible;
+  transition: 0.3s ease-in-out all;
 }
 
 .link__map:hover {
