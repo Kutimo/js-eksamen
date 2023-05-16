@@ -27,9 +27,11 @@
 
 
       <label class="header__search">
-        <input class="search__input" type="search" name="search" id="searchBar">
+        <input class="search__input" type="search" name="search" id="searchBar" placeholder=" ">
         <span class="search__label">Search by name, city or services</span>
       </label>
+
+
 
       <select class="header__service header__dropdown" name="services" id="servicesDropdown">
         <option value="" selected disabled>Sort by service</option>
@@ -47,9 +49,14 @@
         <option value="">Price high-low </option>
       </select>
     </header>
-
   </main>
-
+  <section id="employeeContainer" class="container">
+    <!-- Cards added with js -->
+  </section>
+  <button>more</button>
+  <script type="module" src="./js/script.js"></script>
+  <!-- <script type="module" src="./js/layout.js"></script> -->
+  <script type="module" src="./js/sort.js"></script>
 </body>
 
 </html>

@@ -6,82 +6,135 @@ header {
   display: flex;
   justify-content: center;
   background-color: var(--white);
-  padding: 1rem;
+  padding: 1.5rem;
+  gap: 2rem;
 }
 
-/* https://codepen.io/meodai/pen/rNedxBa */
-/* .input {
-  position: relative;
-}
-
-.input__label {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
-  margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
-  background: pink;
-  white-space: nowrap;
-  transform: translate(0, 0);
-  transform-origin: 0 0;
-  background: var(--color-background);
-  transition: transform 120ms ease-in;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.input__field {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border: 3px solid currentColor;
-  padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
-  color: currentColor;
-  background: transparent;
-  border-radius: var(--size-radius);
-}
-
-.input__field:focus,
-.input__field:not(:placeholder-shown) {
-  & + .input__label {
-    transform: translate(0.25rem, -65%) scale(0.8);
-    color: var(--color-accent);
-  }
-}
-
-.button-group {
-  margin-top: calc(var(--size-bezel) * 2.5);
-}
-
-button {
-  color: currentColor;
-  padding: var(--size-bezel) calc(var(--size-bezel) * 2);
-  background: var(--color-accent);
-  border: */
-
+/* Label element */
 .header__search {
   border: 2px solid var(--dark-accent);
-  width: 15rem;
+  width: 18rem;
   position: relative;
+}
+
+.header__search:focus-within {
+  border: 2px solid var(--dark-accent);
+  border-bottom: 2.5px solid var(--black);
 }
 
 .search__input {
   height: 100%;
   width: 100%;
+  padding: 0.8rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.search__input:focus {
+  outline: none;
 }
 
 .search__label {
   position: absolute;
-  bottom: 20%;
-  left: 2%;
+  text-align: center;
+  top: 0;
+  left: 0.25rem;
+  font-size: 1.2rem;
+  color: var(--dark-shade);
+  transform: translateY(10px);
+  transition: transform 180ms ease-in;
 }
 
-.header__search:focus {
-  outline: none;
-  border-bottom: 1px solid var(--dark-shade);
+.search__input:focus + .search__label,
+.search__input:not(:placeholder-shown) + .search__label {
+  transform: translateY(-15px) scale(0.9);
+  left: 0.4rem;
+  background: white;
 }
 
 .header__dropdown {
   padding: 0.5rem;
-  background-color: var(--light-shade);
+  background: var(--white);
+  outline: transparent;
+  font-size: 1.2rem;
+  border: 2px solid var(--black);
+}
+
+.container {
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 340px;
+  padding: 0.6rem;
+  background-color: var(--light-accent);
+  border: 1px solid var(--dark-shade);
+  filter: var(--shadow-lg);
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid var(--dark-shade);
+  background-color: var(--white);
+}
+
+.card:hover {
+  transform: scale(1.2);
+  filter: var(--shadow-xl);
+  cursor: pointer;
+}
+
+.card__image {
+  border-radius: 9999px;
+  z-index: 2;
+}
+
+.card__name {
+  font-size: 24px;
+}
+
+.card__star {
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 18px;
+  width: 18px;
+  background-image: url("../assets/svg/star.svg");
+}
+
+.filled {
+  background-image: url("../assets/svg/filled-star.svg");
+}
+
+.card__text {
+  /* margin: 1rem 0; */
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.card__badge {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.3rem;
+}
+
+.card__badge > span {
+  border: 1px solid var(--dark-shade);
+  border-radius: 0.4rem;
+  padding: 0.3rem;
 }
