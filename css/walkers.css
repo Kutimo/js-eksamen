@@ -95,10 +95,12 @@ header {
 }
 
 .card:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   filter: var(--shadow-xl);
   cursor: pointer;
 }
+
+/* TODO:OBJECT FIT? */
 
 .card__image {
   border-radius: 9999px;
