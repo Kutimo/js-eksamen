@@ -1,0 +1,39 @@
+.modal__carousel {
+  position: relative;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.carousel__items {
+  display: flex;
+  height: 250px;
+  width: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel__image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+}
+
+.carousel__controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: 1px solid var(--white);
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: var(--white);
+}

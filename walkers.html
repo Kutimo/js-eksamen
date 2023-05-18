@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- TODO:  name, url, author etc. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./css/global.css">
-  <link rel="stylesheet" href="./css/walkers.css">
-  <link rel="stylesheet" href="./css/layout.css">
-  <link rel="stylesheet" href="./css/modal.css">
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/walkers.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/modal.css" />
+  <link rel="stylesheet" href="./css/carousel.css" />
   <!-- TODO: Favicon -->
   <title>Dog Sitters</title>
 </head>
@@ -23,48 +24,50 @@
   <!-- TODO: ADD NAV -->
   <main>
     <header>
-      <!-- <input class="header__search" type="search" name="search" id="searchBar">
-      <label class="header__search-label" for="searchBar">Search by name, city or services</label> -->
-
-
       <label class="header__search">
-        <input class="search__input" type="search" name="search" id="searchBar" placeholder=" ">
+        <input class="search__input" type="search" name="search" id="searchBar" placeholder=" " />
         <span class="search__label">Search by name, city or services</span>
       </label>
-
-
-
-      <select class="header__service header__dropdown" name="services" id="servicesDropdown">
-        <option value="" selected disabled>Sort by service</option>
-        <option value="">Dog walking </option>
-        <option value="">Pet sitting </option>
-        <option value="">Training </option>
-        <option value="">Overnight care </option>
-      </select>
-      <select class="header__sort  header__dropdown" name="sort" id="sortDropdown">
-        <option value="" selected disabled>Sort by rating</option>
-        <option value="">Name </option>
-        <option value="">Rating low-high </option>
-        <option value="">Rating high-low </option>
-        <option value="">Price low-high </option>
-        <option value="">Price high-low </option>
+      <!-- <select class="header__service header__dropdown" name="services" id="servicesDropdown">
+        <option value="" selected disabled>
+          Sort by service
+        </option>
+        <option value="dog walking">Dog walking</option>
+        <option value="pet sitting">Pet sitting</option>
+        <option value="training">Training</option>
+        <option value="overnight care">Overnight care</option>
+      </select> -->
+      <select class="header__sort header__dropdown" name="sort" id="sortDropdown">
+        <option value="" selected disabled>
+          Sort by rating
+        </option>
+        <option value="name">Name</option>
+        <option value="rating-l-h">Rating low-high</option>
+        <option value="rating-h-l">Rating high-low</option>
+        <option value="">Price low-high</option>
+        <option value="">Price high-low</option>
       </select>
     </header>
-  </main>
-  <section id="employeeContainer" class="container">
-    <!-- Cards added with js -->
-    <dialog class="modal">
-      <span class="modal__close">X </span>
+    <section id="employeeContainer" class="container">
+      <!-- Cards added with js -->
+    </section>
+    <dialog class="employee__modal">
+      <span class="modal__close-btn">X </span>
       <div class="modal__body">
-        <img class="modal__image" src="" alt="">
-        <h3 modal__header>name</h3>
-
+        <!-- Modal content added with js -->
+      </div>
+      <div class="modal__carousel">
+        <div class="carousel__items">
+          <!-- images added with js -->
+        </div>
+        <a href="#" class="carousel__controls prev"><img src="./assets/svg/arrow-prev.svg" alt="prev button" height="48"
+            width="48" /></a>
+        <a href="#" class="carousel__controls next"><img src="./assets/svg/arrow-next.svg" alt="next button" height="48"
+            width="48" /></a>
       </div>
     </dialog>
-  </section>
-  <button>more</button>
+  </main>
   <script type="module" src="./js/script.js"></script>
-  <!-- <script type="module" src="./js/layout.js"></script> -->
   <script type="module" src="./js/sort.js"></script>
 </body>
 
