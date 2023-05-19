@@ -75,7 +75,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 250px;
+  width: 280px;
   height: 340px;
   padding: 0.6rem;
   background-color: var(--light-accent);
@@ -99,8 +99,6 @@ header {
   filter: var(--shadow-xl);
   cursor: pointer;
 }
-
-/* TODO:OBJECT FIT? */
 
 .card__image {
   border-radius: 9999px;
@@ -138,5 +136,6 @@ header {
 .card__badge > span {
   border: 1px solid var(--dark-shade);
   border-radius: 0.4rem;
-  padding: 0.3rem;
+  padding: 0.2rem;
+  font-size: 0.7rem;
 }

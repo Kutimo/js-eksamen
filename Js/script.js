@@ -12,6 +12,13 @@ async function getEmployees() {
       // TODO: CONSOLE
       // console.log(data);
       employees = data.results.map((employee) => {
+        const services = generateServices()
+        let nightRate = "";
+        if (services.includes("Overnight care")) {
+          nightRate = generatePrice(450, 900)
+        }
+        const hourRate = generatePrice(75, 200)
+
         return {
           name: `${employee.name.first} ${employee.name.last}`,
           rating: Math.floor(Math.random() * 6),
@@ -23,6 +30,9 @@ async function getEmployees() {
           email: employee.email,
           cell: employee.cell,
           image: employee.picture.large,
+          services: services,
+          hourRate: hourRate,
+          nightRate: nightRate
         };
       });
       createEmployees();
@@ -33,7 +43,18 @@ async function getEmployees() {
 }
 getEmployees();
 
-const services = ["Dog walking", "Pet sitting", "Training", "Overnight care"];
+// TODO: look into this slice method?
+function generateServices() {
+  const services = ["Dog walking", "Pet sitting", "Training", "Overnight care"];
+  const randomNumber = Math.floor(Math.random() * services.length);
+  return services.slice(randomNumber, randomNumber + 3);
+}
+
+function generatePrice(min, max) {
+  const randomPrice = Math.floor(Math.random() * (max - min + 1) + min)
+  const roundedPrice = Math.min(randomPrice, max);
+  return Math.round(roundedPrice / 5) * 5;
+}
 
 export function createEmployees() {
   container.innerHTML = ""
@@ -67,23 +88,24 @@ export function createEmployees() {
       rating.appendChild(star);
     }
 
-    const text = document.createElement("p");
-    text.classList.add("card__text");
-    text.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, unde?";
+    const price = document.createElement("p");
+    if (employee.nightRate !== "") {
+      price.innerHTML = `${employee.hourRate}/hour - ${employee.nightRate}/night`
+    } else {
+      price.innerHTML = `${employee.hourRate}/hour`
+    }
+    price.classList.add("card__rates");
 
     const badgeContainer = document.createElement("div");
     badgeContainer.classList.add("card__badge");
 
-    const badgeAmount = Math.floor(Math.random() * services.length);
-
-    for (let i = 0; i < badgeAmount; i++) {
-      const randomNumber = Math.floor(Math.random() * services.length);
-      if (!badgeContainer.textContent.includes(services[randomNumber])) {
-        badgeContainer.innerHTML += `<span>${services[randomNumber]}</span>`;
-      }
+    if (employee.services.length > 0) {
+      employee.services.forEach(service => {
+        badgeContainer.innerHTML += `<span>${service}</span>`;
+      })
     }
 
-    card.append(thumbnail, name, city, rating, text, badgeContainer);
+    card.append(thumbnail, name, city, rating, price, badgeContainer);
     container.appendChild(card);
   });
   // Calls the view card
@@ -112,7 +134,7 @@ function createModal(id) {
   const employee = employees.find((employee) => employee.id === id);
   // TODO: Find out how to get the rating in the modal
   modalBody.innerHTML = `
-  <h3>${employee.firstName} ${employee.lastName}</h3>
+  <h3>${employee.name}</h3>
   <img src="${employee.image}" alt="employee image" />
   
   <p>${employee.age} ${employee.gender}</p>
