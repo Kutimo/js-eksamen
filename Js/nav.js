@@ -1,38 +1,66 @@
-const menuBtn = document.querySelector(".menu")
-const menu = document.querySelector(".menu__nav")
-
-const modal = document.querySelector(".nav__dialog")
-const modalBody = document.querySelector(".dialog__body")
-const loginBtn = document.querySelector(".login")
-const registrerBtn = document.querySelector(".registrer")
+const menuBtn = document.querySelector(".menu");
+const menu = document.querySelector(".menu__nav");
 
 menuBtn.addEventListener("click", () => {
-  menu.classList.toggle("hidden")
+  menu.classList.toggle("hidden");
 });
 
-if (menu.classList.contains("hidden")) {
-  document.addEventListener("keyup", (e) => {
-    if (e.key === "Escape") {
-      menu.classList.add("hidden")
-      console.log("esc")
-    }
-  })
+const modal = document.querySelector(".nav__dialog");
+const modalBody = document.querySelector(".dialog__body");
+const loginBtn = document.querySelector(".login");
+const registerBtn = document.querySelector(".register");
+const closeBtn = document.querySelector(".dialog__close-btn");
+
+modal.close();
+closeBtn.addEventListener("click", () => {
+  modal.close();
+});
+
+modal.addEventListener("click", outsideClick);
+function outsideClick(event) {
+  if (event.target === modal) {
+    modal.close();
+  }
 }
 
 loginBtn.addEventListener("click", () => {
-  modal.showModal()
+  modal.showModal();
   modalBody.innerHTML = `
-  <form action="">
-     <label class="form__email-label">
-        <input class="form__email-input" type="text"  placeholder=" " />
-        <span class="form__email-span">Email</span>
+  <form action="./success.html" method="get">
+     <label class="form__label" for="email">
+       Email
+        <input class="form__input" type="email" required>
       </label>
-     <label class="form__password-label">
-        <input class="form__password-input" type="password" name="search" id="searchBar" placeholder=" " />
-        <span class="form__password-span">Email</span>
+     <label class="form__label" for="password">
+       Password
+        <input class="form__input" type="password" id="password" required/>
       </label>
-    <button type="submit">Login</button>
+    <button class="form__button" type="submit">Login</button>
   </form>
-  `
-})
+  `;
+});
 
+registerBtn.addEventListener("click", () => {
+  modal.showModal();
+  modalBody.innerHTML = `
+  <form action="./success.html" method="get">
+     <label class="form__label" for="fName">
+       First name
+        <input name="fName" class="form__input" type="text" required>
+      </label>
+     <label class="form__label" for="lName">
+       Last name
+        <input name="lName" class="form__input" type="text" required>
+      </label>
+     <label class="form__label" for="email">
+       Email
+        <input name="email" class="form__input" type="email" required>
+      </label>
+     <label class="form__label" for="password">
+       Password
+        <input name="password" class="form__input" type="password" id="password" required/>
+      </label>
+    <button class="form__button" type="submit">Register</button>
+  </form>
+  `;
+});

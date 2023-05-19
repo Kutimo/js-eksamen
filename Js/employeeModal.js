@@ -14,6 +14,7 @@ function outsideClick(event) {
     modal.close();
   }
 }
+
 // opens and creates the modal text content from the array of employees
 export function createModal(id) {
   const modalBody = document.querySelector(".modal__body");

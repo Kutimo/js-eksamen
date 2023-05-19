@@ -11,7 +11,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="language" content="English" />
   <meta name="author" content="John Doe" />
-  <!-- TODO:  name, url, author etc. -->
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon//favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/">
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -37,7 +42,7 @@
           <a class="nav__link login" href="#">
             <li class="link__li">Log in</li>
           </a>
-          <a class="nav__link registrer" href="#">
+          <a class="nav__link register" href="#">
             <li class="link__li">Registrer</li>
           </a>
           <a class="nav__link" href="./walkers.html">
@@ -48,17 +53,20 @@
     </div>
     <dialog class="nav__dialog">
       <span class="dialog__close-btn">X</span>
-      <div class="dialog__body">
-      </div>
+      <div class="dialog__body"></div>
+      <img class="" src="./assets/svg/hero_illustration.svg" alt="dog walker illustration" width="250" height="250" />
     </dialog>
   </header>
+
   <main class="hero">
     <div class="hero__container">
       <h2 class="hero__title">Trusted Experienced and Local dog care</h2>
       <p class="hero__body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolorem, ipsam odio rem ratione cumque.
       </p>
-      <button class="hero__button" href="#">Get started</button>
+      <button class="hero__button" href="#">
+        Get started
+      </button>
     </div>
     <!-- Background images and illustrations -->
     <img src="./assets/svg/blob.svg" class="hero__bg-image" alt="background illustration" width="617" height="378" />
@@ -68,7 +76,6 @@
     </a>
   </main>
 
-  <img class="" src="./assets/svg/hero_illustration.svg" alt="dog walker illustration" width="450" height="350" />
   <script type="module" src="./js/nav.js"></script>
 </body>
 
