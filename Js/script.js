@@ -1,6 +1,6 @@
 import { createModal } from "./employeeModal.js"
 
-export const container = document.querySelector("#employeeContainer");
+const container = document.querySelector("#employeeContainer");
 
 export let employees = [];
 
@@ -36,8 +36,6 @@ async function getEmployees() {
         };
       });
       createEmployeesCard(employees);
-      // TODO: CONSOLE
-      console.log(employees);
     })
     .catch((error) => console.error(error));
 }

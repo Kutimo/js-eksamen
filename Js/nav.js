@@ -12,7 +12,6 @@ const registerBtn = document.querySelector(".register");
 const heroBtn = document.querySelector(".hero__button");
 const closeBtn = document.querySelector(".dialog__close-btn");
 
-modal.close();
 closeBtn.addEventListener("click", () => {
   modal.close();
 });
