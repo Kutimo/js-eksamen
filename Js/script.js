@@ -5,12 +5,9 @@ const container = document.querySelector("#employeeContainer");
 export let employees = [];
 
 async function getEmployees() {
-  // add a map with adresse of all employees?
   fetch("https://randomuser.me/api/?nat=no&results=10")
     .then((response) => response.json())
     .then((data) => {
-      // TODO: CONSOLE
-      // console.log(data);
       employees = data.results.map((employee) => {
         const services = generateServices()
         let nightRate = "";
@@ -105,11 +102,9 @@ export function createEmployeesCard(employees) {
     card.append(thumbnail, name, city, rating, price, badgeContainer);
     container.appendChild(card);
   });
-  // Calls the view card
   viewCard();
 }
 
-// Done like this so the querySelectorAll is called after the cards are rendered.
 function viewCard() {
   const cards = document.querySelectorAll(".card");
   cards.forEach(function (card) {

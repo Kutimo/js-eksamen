@@ -15,13 +15,12 @@ function outsideClick(event) {
   }
 }
 
-// opens and creates the modal text content from the array of employees
 export function createModal(id) {
   const modalBody = document.querySelector(".modal__body");
   modalBody.innerHTML = "";
 
   modal.showModal();
-  // get info from array to display info
+ 
   const employee = employees.find((employee) => employee.id === id);
 
   const rating = document.createElement("div");
@@ -53,7 +52,7 @@ export function createModal(id) {
       <li>${employee.hourRate} per Hour</li>
       ${employee.nightRate !== "" ? `<li>${employee.nightRate} per Night</li>` : ""} 
     </ul >
-</div >
+    </div >
     <address class="body__address">
       <a href="tel:${employee.cell}">${employee.cell}</a>
       <a href="mailto:${employee.email}">${employee.email}</a>
