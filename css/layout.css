@@ -67,3 +67,14 @@
 .link__li-find {
   border-top: 1px solid var(--dark-accent);
 }
+
+footer {
+  background-color: var(--dark-shade);
+  margin-top: 0.2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer > ul > li {
+  color: var(--white);
+}

@@ -9,6 +9,7 @@ const modal = document.querySelector(".nav__dialog");
 const modalBody = document.querySelector(".dialog__body");
 const loginBtn = document.querySelector(".login");
 const registerBtn = document.querySelector(".register");
+const heroBtn = document.querySelector(".hero__button");
 const closeBtn = document.querySelector(".dialog__close-btn");
 
 modal.close();
@@ -41,6 +42,14 @@ loginBtn.addEventListener("click", () => {
 });
 
 registerBtn.addEventListener("click", () => {
+  register();
+});
+
+heroBtn.addEventListener("click", () => {
+  register();
+});
+
+function register() {
   modal.showModal();
   modalBody.innerHTML = `
   <form action="./success.html" method="get">
@@ -63,4 +72,4 @@ registerBtn.addEventListener("click", () => {
     <button class="form__button" type="submit">Register</button>
   </form>
   `;
-});
+}

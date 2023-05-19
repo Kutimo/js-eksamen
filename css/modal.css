@@ -18,6 +18,11 @@
   font-weight: semi-bold;
 }
 
+.dialog__close-btn:hover {
+  cursor: pointer;
+  color: var(--dark-accent);
+}
+
 .dialog__body > form {
   display: flex;
   flex-direction: column;
@@ -68,9 +73,7 @@
 .employee__modal {
   outline: transparent;
   border: none;
-  display: flex;
-  align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
   gap: 5rem;
 }
 

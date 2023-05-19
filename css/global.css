@@ -11,6 +11,7 @@
   /* Drop shadows */
   --shadow-lg: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
   --shadow-xl: drop-shadow(0 20px 13px rgb(0 0 0 / 0.05)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  /* Gradient */
   --gradient: linear-gradient(293.15deg, #050ec3 -78.01%, #293e8d -7.64%, #6fa7c4 39.86%, #d5d2d2 80.32%);
 }
 
@@ -21,17 +22,7 @@ html {
   height: 100%;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul,
-a,
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, a,
 button {
   margin: 0;
   padding: 0;

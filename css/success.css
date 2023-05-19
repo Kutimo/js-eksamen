@@ -1,0 +1,30 @@
+.success {
+  padding: 1rem;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.success > h1 {
+  font-weight: 600;
+}
+
+.success > button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 0.3rem;
+  border: solid 0.2rem var(--dark-shade);
+  color: var(--white);
+  padding: 0.5rem;
+  background-color: var(--main-color);
+  transition: 0.3s ease-in-out all;
+}
+
+.success > button:hover {
+  cursor: pointer;
+  border-color: var(--dark-accent);
+  filter: var(--shadow-xl);
+}

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="title" content="Dog sitters" />
@@ -12,14 +11,62 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="language" content="English" />
   <meta name="author" content="John Doe" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon//apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon//favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon//favicon-16x16.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
   <title>success Page</title>
-  link
 </head>
 
 <body>
-  <nav></nav>
-  <h1>Welcome</h1>
-  <button onclick="window.location.href='./walkers.html';">Click here to see our available dog sitters</button>
+  <header class="navbar">
+    <a href="/" class="navbar__logo">
+      <img src="./assets/svg/logo.svg" alt="logo" height="64" width="64" />
+      <h1>Dog sitters</h1>
+    </a>
+    <div class="menu">
+      <img class="menu__icon" src="./assets/svg/ham_menu.svg" alt="menu icon" height="20" width="20" />
+      <img class="menu__icon" src="./assets/svg/user_icon.svg" alt="user icon" height="30" width="30" />
+      <nav class="menu__nav hidden">
+        <ul class="nav__list">
+          <a class="nav__link login" href="#">
+            <li class="link__li">Log in</li>
+          </a>
+          <a class="nav__link register" href="#">
+            <li class="link__li">Registrer</li>
+          </a>
+          <a class="nav__link" href="./walkers.html">
+            <li class="link__li link__li-find">Find walker</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+    <dialog class="nav__dialog">
+      <span class="dialog__close-btn">X</span>
+      <div class="dialog__body"></div>
+      <img class="" src="./assets/svg/hero_illustration.svg" alt="dog walker illustration" width="250" height="250" />
+    </dialog>
+  </header>
+  <main class="success">
+    <h1>Welcome</h1>
+    <button onclick="window.location.href='./walkers.html';">Click here to see our available dog sitters</button>
+  </main>
+  <footer>
+    <ul>
+      <li>Lorem</li>
+      <li>Ipsum</li>
+      <li>2023</li>
+    </ul>
+  </footer>
+  <script type="module" src="./js/nav.js"></script>
 </body>
 
 </html>
