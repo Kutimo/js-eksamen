@@ -121,7 +121,3 @@ function viewCard() {
     });
   });
 }
-
-// opens and creates the modal text content from the array of employees
-
-

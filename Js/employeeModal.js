@@ -20,7 +20,7 @@ function outsideClick(event) {
     modal.close();
   }
 }
-
+// opens and creates the modal text content from the array of employees
 export function createModal(id) {
   const modalBody = document.querySelector(".modal__body");
   modalBody.innerHTML = "";
@@ -28,22 +28,40 @@ export function createModal(id) {
   modal.showModal();
   // get info from array to display info
   const employee = employees.find((employee) => employee.id === id);
-  // TODO: Find out how to get the rating in the modal
-  modalBody.innerHTML = `
-  <h3>${employee.name}</h3>
-  <img src="${employee.image}" alt="employee image" />
-  
-  <p>${employee.age} ${employee.gender}</p>
-  
-  <div>
-  <h4>Services</h4>
 
+  const rating = document.createElement("div");
+  for (let i = 0; i < 5; i++) {
+    const star = document.createElement("span");
+    star.classList.add("card__star");
+    if (i < employee.rating) {
+      star.classList.add("filled");
+    }
+    rating.appendChild(star);
+  }
+  modalBody.innerHTML = `
+  <h3 class="body__title">${employee.name}</h3>
+  <img class="body__img" src="${employee.image}" alt="employee image" />
+  <div class="body__info">
+     <p>${employee.age} ${employee.gender}</p>
+    <div class="body__rating">
+       ${rating.innerHTML}
+    </div>
+    <span>${employee.city} ${employee.state}</span>
   </div>
-  <address>
-  <span>${employee.city} ${employee.state}</span>
-  <a href="tel:${employee.cell}">${employee.cell}</a>
-  <a href="mailto:${employee.email}">${employee.email}</a>
-  </address>
+  <div class="body__services-and-prices">
+    <ul>
+     <li><h4>Services</h4></li> 
+     ${employee.services.map(service => `<li>${service}</li>`).join('')}
+    </ul >
+    <ul>
+      <li>${employee.hourRate} per Hour</li>
+      ${employee.nightRate !== "" ? `<li>${employee.nightRate} per Night</li>` : ""} 
+    </ul >
+</div >
+    <address class="body__address">
+      <a href="tel:${employee.cell}">${employee.cell}</a>
+      <a href="mailto:${employee.email}">${employee.email}</a>
+    </address>
   `;
   createCarousel()
 }
