@@ -1,14 +1,13 @@
 :root {
   /* COLORS */
-  --white: #f4eeee;
+  --white: #ffffff;
+  --off-white: #f4eeee;
   --light-shade: #d5d2d2;
   --light-accent: #6fa7c4;
   --main-color: #050ec3;
   --dark-accent: #293e8d;
   --dark-shade: #131016;
   --black: #000000;
-  /* TODO: unused ?? */
-  /* --black35: #00000035; */
   /* Drop shadows */
   --shadow-lg: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
   --shadow-xl: drop-shadow(0 20px 13px rgb(0 0 0 / 0.05)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
@@ -51,8 +50,6 @@ a {
 }
 
 img {
-  /* max-width: 100%;
-  height: auto; */
   pointer-events: none;
 }
 

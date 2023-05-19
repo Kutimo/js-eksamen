@@ -1,4 +1,4 @@
-import { createCarousel } from "./createCarousel.js";
+import { createModal } from "./employeeModal.js"
 
 export const container = document.querySelector("#employeeContainer");
 
@@ -35,7 +35,7 @@ async function getEmployees() {
           nightRate: nightRate
         };
       });
-      createEmployees();
+      createEmployeesCard(employees);
       // TODO: CONSOLE
       console.log(employees);
     })
@@ -43,7 +43,6 @@ async function getEmployees() {
 }
 getEmployees();
 
-// TODO: look into this slice method?
 function generateServices() {
   const services = ["Dog walking", "Pet sitting", "Training", "Overnight care"];
   const randomNumber = Math.floor(Math.random() * services.length);
@@ -56,7 +55,7 @@ function generatePrice(min, max) {
   return Math.round(roundedPrice / 5) * 5;
 }
 
-export function createEmployees() {
+export function createEmployeesCard(employees) {
   container.innerHTML = ""
   employees.forEach((employee) => {
     const card = document.createElement("div");
@@ -124,31 +123,5 @@ function viewCard() {
 }
 
 // opens and creates the modal text content from the array of employees
-function createModal(id) {
-  const modal = document.querySelector(".employee__modal");
-  const modalBody = document.querySelector(".modal__body");
-  modalBody.innerHTML = "";
 
-  modal.showModal();
-  // get info from array to display info
-  const employee = employees.find((employee) => employee.id === id);
-  // TODO: Find out how to get the rating in the modal
-  modalBody.innerHTML = `
-  <h3>${employee.name}</h3>
-  <img src="${employee.image}" alt="employee image" />
-  
-  <p>${employee.age} ${employee.gender}</p>
-  
-  <div>
-  <h4>Services</h4>
-
-  </div>
-  <address>
-  <span>${employee.city} ${employee.state}</span>
-  <a href="tel:${employee.cell}">${employee.cell}</a>
-  <a href="mailto:${employee.email}">${employee.email}</a>
-  </address>
-  `;
-  createCarousel()
-}
 

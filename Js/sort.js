@@ -1,66 +1,69 @@
-import { employees, createEmployees } from "./script.js";
+import { employees, createEmployeesCard } from "./script.js";
 const searchBar = document.querySelector("#searchBar");
 const sortDropdown = document.querySelector("#sortDropdown");
 
-// let searchValue = "";
-// let sortValue = "";
+sortDropdown.addEventListener("change", applyFilterAndSort);
+searchBar.addEventListener("keyup", applyFilterAndSort);
 
-sortDropdown.addEventListener("change", () => {
-  const searchValue = searchBar.value.toLocaleLowerCase();
-  const sortValue = sortDropdown.value;
-  sortCards(searchValue, sortValue);
-});
+function applyFilterAndSort() {
+  let searchValue = searchBar.value.toLocaleLowerCase();
+  let sortValue = sortDropdown.value;
 
-searchBar.addEventListener("keyup", () => {
-  const searchValue = searchBar.value.toLocaleLowerCase();
-  const sortValue = sortDropdown.value;
-  sortCards(searchValue, sortValue);
-  const key = event.key;
-  if (searchBar.value.length <= 1 || key === "Escape") {
-    if (key === "Backspace" || key === "Delete" || key === "Escape") {
-      sortCards(" ", sortValue);
-    }
-  }
-});
+  let filteredEmployees = filterEmployee(searchValue);
+  let sortedEmployees = sortEmployees(filteredEmployees, sortValue);
 
-// function applySearchAndSort() {
-//   const filteredSearch = 
-// }
+  createEmployeesCard(sortedEmployees);
+}
 
-// Search and sort function
-function sortCards(searchValue, sortValue) {
-  const cards = document.querySelectorAll(".card");
-  console.log(searchValue, sortValue);
+function sortEmployees(employees, sortValue) {
+  let sortedEmployees = [...employees];
 
-  if (sortValue) {
-    if (sortValue === "name") {
-      employees.sort((a, b) => {
-        const nameA = a.name.toLowerCase();
-        const nameB = b.name.toLowerCase();
-        return nameA.localeCompare(nameB);
-      });
-    } else if (sortValue === "rating-l-h") {
-      employees.sort((a, b) => {
-        return a.rating - b.rating;
-      });
-    } else if (sortValue === "rating-h-l") {
-      employees.sort((a, b) => {
-        return b.rating - a.rating;
-      });
-    }
-    createEmployees();
-  }
-
-  if (searchValue) {
-    cards.forEach((card) => {
-      const city = card.querySelector(".card__city").textContent.toLocaleLowerCase();
-      const name = card.querySelector(".card__name").textContent.toLowerCase();
-      const badge = card.querySelector(".card__badge").textContent.toLocaleLowerCase();
-      if (name.includes(searchValue) || city.includes(searchValue) || badge.includes(searchValue)) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
+  if (sortValue === "name") {
+    sortedEmployees.sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
+  } else if (sortValue === "rating-l-h") {
+    sortedEmployees.sort((a, b) => {
+      return a.rating - b.rating;
+    });
+  } else if (sortValue === "rating-h-l") {
+    sortedEmployees.sort((a, b) => {
+      return b.rating - a.rating;
+    });
+  } else if (sortValue === "hourRate-l-h") {
+    sortedEmployees.sort((a, b) => {
+      return a.hourRate - b.hourRate;
+    });
+  } else if (sortValue === "hourRate-h-l") {
+    sortedEmployees.sort((a, b) => {
+      return b.hourRate - a.hourRate;
+    });
+  } else if (sortValue === "nightRate-l-h") {
+    sortedEmployees = sortedEmployees.filter((employee) => employee.nightRate !== "");
+    sortedEmployees.sort((a, b) => {
+      return a.nightRate - b.nightRate;
+    });
+  } else if (sortValue === "nightRate-h-l") {
+    sortedEmployees = sortedEmployees.filter((employee) => employee.nightRate !== "");
+    sortedEmployees.sort((a, b) => {
+      return b.nightRate - a.nightRate;
     });
   }
+  return sortedEmployees;
+}
+
+function filterEmployee(searchValue) {
+  const cards = document.querySelectorAll(".card");
+
+  return employees.filter((employee) => {
+    const name = employee.name.toLowerCase();
+    const city = employee.city.toLowerCase();
+    const state = employee.state.toLowerCase();
+    const services = employee.services.map((service) => service.toLowerCase());
+
+    const hasMatchingService = services.some((service) => service.includes(searchValue));
+    return (
+      name.includes(searchValue) || city.includes(searchValue) || state.includes(searchValue) || hasMatchingService
+    );
+  });
 }

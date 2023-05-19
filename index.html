@@ -2,76 +2,69 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Dog sitters" />
+  <meta name="description" content="An app for finding a local dog walker and or trainer for your beloved pup." />
+  <meta name="keywords" content="dog sitter, dog training, overnight care for your dog." />
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="English" />
+  <meta name="author" content="John Doe" />
   <!-- TODO:  name, url, author etc. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./css/global.css">
-  <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="./css/layout.css">
-  <!-- TODO: Favicon -->
-  <title>Dog Sitters</title>
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
+
+  <title>Dog Sitters | Home</title>
 </head>
 <!-- TODO: Dialog element -->
 
 <body>
   <header class="navbar">
     <a href="/" class="navbar__logo">
-      <img src="./assets/svg/logo.svg" alt="logo" height="64" width="64">
-      <h1>
-        Dog sitters
-      </h1>
+      <img src="./assets/svg/logo.svg" alt="logo" height="64" width="64" />
+      <h1>Dog sitters</h1>
     </a>
     <div class="menu">
-      <img class="menu__icon" src="./assets/svg/ham_menu.svg" alt="menu icon" height="20" width="20">
-      <img class="menu__icon" src="./assets/svg/user_icon.svg" alt="user icon" height="30" width="30">
+      <img class="menu__icon" src="./assets/svg/ham_menu.svg" alt="menu icon" height="20" width="20" />
+      <img class="menu__icon" src="./assets/svg/user_icon.svg" alt="user icon" height="30" width="30" />
       <nav class="menu__nav hidden">
         <ul class="nav__list">
-          <a class="nav__link" href="">
+          <a class="nav__link" href="#">
             <li class="link__li">Log in</li>
           </a>
-          <a class="nav__link" href="">
+          <a class="nav__link" href="#">
             <li class="link__li">Registrer</li>
           </a>
           <a class="nav__link" href="./walkers.html">
             <li class="link__li link__li-find">Find walker</li>
           </a>
-
         </ul>
       </nav>
     </div>
   </header>
   <main class="hero">
     <div class="hero__container">
-      <h1 class="hero__title">
-        Trusted Experienced and Local dog care
-      </h1>
+      <h2 class="hero__title">Trusted Experienced and Local dog care</h2>
       <p class="hero__body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur dolorem, ipsam odio rem ratione cumque.
       </p>
-      <button class="hero__button">Get started</button>
+      <button class="hero__button" href="#">Get started</button>
     </div>
     <!-- Background images and illustrations -->
-    <img src="./assets/svg/blob.svg" class="bg-wrapper__image" alt="background illustration" width="617" height="378" />
-    <a href="" class="link">
-      <img src="./assets/svg/map.svg" class="link__map" alt="map illustration" height="200" width="200">
+    <img src="./assets/svg/blob.svg" class="hero__bg-image" alt="background illustration" width="617" height="378" />
+    <a href="./walkers.html" class="link">
+      <img src="./assets/svg/map.svg" class="link__map" alt="map illustration" height="200" width="200" />
       <h3 class="link__title">Find experienced dog walkers near you</h3>
     </a>
   </main>
-  <section></section>
-  <div>
-    <p class="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, sequi?</p>
-  </div>
 
-  <img class="" src="./assets/svg/hero_illustration.svg" alt="dog walker illustration" width="450" height="350">
-  <!-- <script type="module" src="./js/script.js"></script> -->
+  <img class="" src="./assets/svg/hero_illustration.svg" alt="dog walker illustration" width="450" height="350" />
   <script type="module" src="./js/layout.js"></script>
-  <!-- <script type="module" src="./js/sort.js"></script> -->
 </body>
 
 </html>

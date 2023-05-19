@@ -1,4 +1,3 @@
-/* navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -11,6 +10,7 @@
   align-items: center;
   text-decoration: none;
   color: var(--dark-accent);
+  font-weight: 600;
   gap: 1rem;
 }
 
@@ -31,9 +31,6 @@
   cursor: pointer;
   border-radius: 9999px;
   background: var(--white);
-}
-.menu:hover {
-  /* filter: var(--shadow-lg); */
 }
 
 .menu__icon {

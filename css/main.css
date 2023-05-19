@@ -12,15 +12,13 @@ body {
   width: 50%;
   max-width: 700px;
   padding: 1rem 5rem;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .hero__title {
   display: inline;
   font-weight: 700;
   font-size: 66px;
-  color: var(--black);
+  color: var(--white);
   background-color: var(--dark-accent);
   word-break: break-word;
   line-height: 1.5;
@@ -46,16 +44,11 @@ body {
 
 .hero__button:hover {
   cursor: pointer;
-  border-color: var(--light-accent);
+  border-color: var(--dark-accent);
   filter: var(--shadow-xl);
 }
 
-/* .hero__bg-wrapper {
-  height: 100vh;
-  width: 100%;
-} */
-
-.bg-wrapper__image {
+.hero__bg-image {
   position: absolute;
   right: 0;
   bottom: 0;

@@ -2,28 +2,28 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- TODO:  name, url, author etc. -->
+  <meta name="title" content="Dog sitters" />
+  <meta name="description" content="An app for finding a local dog walker and or trainer for your beloved pup." />
+  <meta name="keywords" content="dog sitter, dog training, overnight care for your dog." />
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="language" content="English" />
+  <meta name="author" content="John Doe" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="./css/global.css" />
-  <link rel="stylesheet" href="./css/walkers.css" />
-  <link rel="stylesheet" href="./css/layout.css" />
-  <link rel="stylesheet" href="./css/modal.css" />
-  <link rel="stylesheet" href="./css/carousel.css" />
-  <!-- TODO: Favicon -->
-  <title>Dog Sitters</title>
+  <link rel="stylesheet" href="./index.css" />
+  <title>Dog Sitters | Walkers</title>
 </head>
 
 <body>
   <!-- TODO: ADD NAV -->
   <main>
-    <header>
+    <header class="walkers__header">
       <label class="header__search">
         <input class="search__input" type="search" name="search" id="searchBar" placeholder=" " />
         <span class="search__label">Search by name, city or services</span>
@@ -62,6 +62,7 @@
   </main>
   <script type="module" src="./js/script.js"></script>
   <script type="module" src="./js/sort.js"></script>
+  <script type="module" src="./js/employeeModal.js"></script>
 </body>
 
 </html>
