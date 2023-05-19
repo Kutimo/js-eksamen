@@ -1,6 +1,5 @@
 import { employees, createEmployees } from "./script.js"
 const searchBar = document.querySelector("#searchBar")
-const servicesDropdown = document.querySelector("#servicesDropdown")
 const sortDropdown = document.querySelector("#sortDropdown")
 
 
@@ -12,7 +11,7 @@ sortDropdown.addEventListener("change", () => {
 
 searchBar.addEventListener("keydown", () => {
   const searchValue = searchBar.value.toLocaleLowerCase()
-  const sortValue = servicesDropdown.value
+  const sortValue = sortDropdown.value
   sortCards(searchValue, sortValue)
   const key = event.key;
   if (searchBar.value.length <= 2) {
@@ -22,11 +21,11 @@ searchBar.addEventListener("keydown", () => {
   }
 })
 
-servicesDropdown.addEventListener("change", () => {
-  const searchValue = searchBar.value.toLocaleLowerCase()
-  const sortValue = servicesDropdown.value
-  sortCards(searchValue, sortValue)
-})
+// servicesDropdown.addEventListener("change", () => {
+//   const searchValue = searchBar.value.toLocaleLowerCase()
+//   const sortValue = servicesDropdown.value
+//   sortCards(searchValue, sortValue)
+// })
 
 // Search and sort function 
 function sortCards(searchValue, sortValue) {
