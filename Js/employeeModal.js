@@ -2,19 +2,13 @@ import { createCarousel } from "./createCarousel.js";
 import { employees } from "./script.js";
 
 const modal = document.querySelector(".employee__modal");
-const closeBtn = document.querySelector(".modal__close-btn")
-// Nav
-// const menuBtn = document.querySelector(".menu")
-// const menu = document.querySelector(".menu__nav")
-// menuBtn.addEventListener("click", () => {
-//   menu.classList.toggle("hidden")
-// });
+const closeBtn = document.querySelector(".modal__close-btn");
 
 closeBtn.addEventListener("click", () => {
-  modal.close()
-})
+  modal.close();
+});
 
-modal.addEventListener('click', outsideClick);
+modal.addEventListener("click", outsideClick);
 function outsideClick(event) {
   if (event.target === modal) {
     modal.close();
@@ -51,9 +45,10 @@ export function createModal(id) {
   <div class="body__services-and-prices">
     <ul>
      <li><h4>Services</h4></li> 
-     ${employee.services.map(service => `<li>${service}</li>`).join('')}
+     ${employee.services.map((service) => `<li>${service}</li>`).join("")}
     </ul >
     <ul>
+      <li><h4>Prices</h4></li>
       <li>${employee.hourRate} per Hour</li>
       ${employee.nightRate !== "" ? `<li>${employee.nightRate} per Night</li>` : ""} 
     </ul >
@@ -63,5 +58,5 @@ export function createModal(id) {
       <a href="mailto:${employee.email}">${employee.email}</a>
     </address>
   `;
-  createCarousel()
+  createCarousel();
 }
